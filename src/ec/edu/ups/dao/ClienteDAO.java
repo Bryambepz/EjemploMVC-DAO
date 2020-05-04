@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class ClienteDAO implements IClienteDAO {
 
-    private final List<Cliente> listaCliente;
+    private List<Cliente> listaCliente;
 
     public ClienteDAO() {
         listaCliente = new ArrayList<>();
