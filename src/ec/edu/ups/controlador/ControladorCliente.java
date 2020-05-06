@@ -6,6 +6,7 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.dao.ClienteDAO;
+import ec.edu.ups.idao.IClienteDAO;
 import ec.edu.ups.modelo.Cliente;
 import ec.edu.ups.vista.VistaCliente;
 import java.util.List;
@@ -20,7 +21,7 @@ public class ControladorCliente {
 
     //objetos vist
     private VistaCliente vistaCliente;
-    private ClienteDAO clienteDAO;
+    private IClienteDAO clienteDAO;
 
     // constructor
     public ControladorCliente(VistaCliente vistaCliente) {
