@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.ups.dao;
+package ec.edu.ups.idao;
 
 import ec.edu.ups.modelo.Cliente;
 import java.util.List;

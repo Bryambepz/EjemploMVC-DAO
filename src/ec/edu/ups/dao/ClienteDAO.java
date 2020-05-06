@@ -5,6 +5,7 @@
  */
 package ec.edu.ups.dao;
 
+import ec.edu.ups.idao.IClienteDAO;
 import ec.edu.ups.modelo.Cliente;
 import java.util.ArrayList;
 import java.util.Iterator;
