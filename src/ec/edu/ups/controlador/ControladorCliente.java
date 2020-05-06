@@ -21,6 +21,7 @@ public class ControladorCliente {
 
     //objetos vist
     private VistaCliente vistaCliente;
+    private Cliente cliente;
     private IClienteDAO clienteDAO;
 
     // constructor
@@ -32,26 +33,26 @@ public class ControladorCliente {
 
     //llama al DAO para guardar un cliente
     public void registrar() {
-        Cliente cliente = vistaCliente.ingresarCliente();
+        cliente = vistaCliente.ingresarCliente();
         clienteDAO.create(cliente);
     }
 
     //llama al DAO para obtener un cliente por el id y luego los muestra en la vista
     public void verCliente() {
         int id = vistaCliente.buscarCliente();
-        Cliente cliente = clienteDAO.read(id);
+        cliente = clienteDAO.read(id);
         vistaCliente.verCliente(cliente);
     }
 
     //llama al DAO para actualizar un cliente
     public void actualizar() {
-        Cliente cliente = vistaCliente.actualizarCliente();
+        cliente = vistaCliente.actualizarCliente();
         clienteDAO.update(cliente);
     }
 
     //llama al DAO para eliminar un cliente
     public void eliminar() {
-        Cliente cliente = vistaCliente.eliminarCliente();
+        cliente = vistaCliente.eliminarCliente();
         clienteDAO.delete(cliente);
     }
 

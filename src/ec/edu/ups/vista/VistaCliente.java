@@ -14,9 +14,15 @@ import java.util.Scanner;
  * @author Dr. Gabriel A. León Paredes
  */
 public class VistaCliente {
+    
+    private Scanner entrada;
 
+    public VistaCliente() {
+        entrada = new Scanner(System.in);
+    }
+    
     public Cliente ingresarCliente() {
-        Scanner entrada = new Scanner(System.in);
+        entrada = new Scanner(System.in);
         System.out.println("Ingresa los datos del cliente");
         int id = entrada.nextInt();
         String nombre = entrada.next();
@@ -25,7 +31,7 @@ public class VistaCliente {
     }
 
     public Cliente actualizarCliente() {
-        Scanner entrada = new Scanner(System.in);
+        entrada = new Scanner(System.in);
         System.out.println("Ingresa el id del cliente a actualizar");
         int id = entrada.nextInt();
         System.out.println("Ingrese los nuevos Datos (nombre, apellido)");
@@ -35,14 +41,14 @@ public class VistaCliente {
     }
 
     public Cliente eliminarCliente() {
-        Scanner entrada = new Scanner(System.in);
+        entrada = new Scanner(System.in);
         System.out.println("Ingresa el id del cliente a eliminar");
         int id = entrada.nextInt();
         return new Cliente(id, null, null);
     }
 
     public int buscarCliente() {
-        Scanner entrada = new Scanner(System.in);
+        entrada = new Scanner(System.in);
         System.out.println("Ingresa el id del cliente a buscar");
         int id = entrada.nextInt();
         return id;
