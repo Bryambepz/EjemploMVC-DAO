@@ -5,6 +5,9 @@
  */
 package ec.edu.ups.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Clase modelo.
  *
@@ -17,15 +20,19 @@ public class Cliente {
     private int id;
     private String nombre;
     private String apellido;
+    //atributo de agregación
+    private List<Direccion> direcciones;
 
     //constructores
     public Cliente() {
+        direcciones = new ArrayList<>();
     }
 
     public Cliente(int id, String nombre, String apellido) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
+        direcciones = new ArrayList<>();
     }
 
     //getters y setters
@@ -53,6 +60,35 @@ public class Cliente {
         this.apellido = apellido;
     }
 
+    //métodos de la agregación
+    public void agregarDireccion(Direccion direccion) {
+        direcciones.add(direccion);
+    }
+
+    public void actualizarDireccion(Direccion direccion) {
+        if (direcciones.contains(direccion)) {
+            int index = direcciones.indexOf(direccion);
+            direcciones.set(index, direccion);
+        }
+    }
+
+    public void eliminarDireccion(Direccion direccion) {
+        if (direcciones.contains(direccion)) {
+            int index = direcciones.indexOf(direccion);
+            direcciones.remove(index);
+        }
+    }
+
+    public List<Direccion> listar() {
+        return direcciones;
+    }
+
+    public Direccion buscar(int id) {
+
+        return direcciones.get(id);
+
+    }
+
     //métodos de la clase Object
     @Override
     public int hashCode() {
@@ -78,7 +114,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + '}';
+        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + '}' + "\nDirecciones: " + direcciones.toString();
     }
 
 }
